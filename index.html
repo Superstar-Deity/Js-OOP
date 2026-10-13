@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+    <style>
+
+        :root {
+            --primary-color: #10081a;
+            --text-color: #e9d5ff;
+            --secondary-color: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+             background:
+                radial-gradient(circle at top, #2a0a45 0%, transparent 45%),
+                linear-gradient(135deg, #05000a, #160923);
+                color: var(--text-color);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .container {         
+            flex-direction: column;
+            width: 50%;  
+            margin-top: 25vh;  
+        }
+
+        .box {
+            margin-bottom: 35px;
+            font-size: 2rem;
+        }
+
+        .subject-sect {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .object {
+            margin-right: 15px;
+        }
+
+        
+        select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            font: inherit;
+            font-size: 0.85rem;
+            outline: none;
+            color: var(--text-color);
+            border: 1px solid #68458a;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        button {
+            padding: 0.85rem 1.5rem;
+            border-radius: 8px;
+            color: #10091a;
+            border: none;
+            background-color: var(--secondary-color);
+            font: inherit;
+            font-weight: 500;
+             transition:
+                background-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.2s ease;
+        }
+        
+        button:hover {
+            background-color: #e5c45a;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Book Library</h1>
+        </div>
+
+        <div class="subject-sect">
+
+            <div class="object">
+                <select name="subject" id="selectedSubject">
+                    <option value="-">Select Your Subject</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="biology">Biology</option>
+                    <option value="economics">Economics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="physics">Physics</option>
+                </select>
+            </div>
+        
+        <br>
+
+            <div class="btn">
+                <button onClick="verifyBook()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verifyBook() {
+            let book = document.getElementById("selectedSubject").value;
+            // var book = document.getElementByID("selectedSubject").value;
+            console.log("the book selected is", book);
+
+            switch (book) {
+                case "mathematics": document.write("Mathematics book selected <br/>");
+                break;
+                case "biology": document.write("Biology book selected <br/>");
+                break;
+                case "economics": document.write("Economics book selected <br/>");
+                break;
+                case "chemistry": document.write("Chemistry book selected <br/>");
+                break;
+                case "physics": document.write("Physics book selected br/>");
+                break;
+                default: document.write("No book selected <br/>")
+            }
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
